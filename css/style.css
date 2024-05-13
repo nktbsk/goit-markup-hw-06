@@ -907,6 +907,9 @@ img {
   .footer {
     padding: 100px 0;
   }
+  .footer .container{
+    margin: auto;
+  }
   .footer-logo {
     margin-right: 120px;
   }
