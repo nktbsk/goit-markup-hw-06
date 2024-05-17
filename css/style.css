@@ -83,9 +83,6 @@ img {
   text-transform: uppercase;
   font-family: "Raleway", sans-serif;
   color: #4d5ae5;
-  margin-right: 120px;
-  padding-top: 24px;
-  padding-bottom: 24px;
 }
 .nav .item {
   font-size: 16px;
@@ -115,15 +112,9 @@ img {
   border: none;
   background-color: transparent;
   padding: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
-/* .address .a-list {
-  display: flex;
-  gap: 40px;
-}
-.a-list .item {
-  padding-top: 24px;
-  padding-bottom: 24px;
-} */
 .a-list .item:last-child {
   margin-right: 0px;
 }
@@ -201,6 +192,10 @@ img {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 48px;
+  font-size: 36px;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: 0.02em;
 }
 .btm {
   background-color: #4d5ae5;
@@ -498,7 +493,6 @@ img {
   letter-spacing: 0.04em;
   padding-left: 16px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  margin-bottom: 16px;
 }
 .subscribe-input::placeholder {
   font-size: 12px;
@@ -523,6 +517,7 @@ img {
   align-items: center;
   font-family: "Roboto", sans-serif;
   margin: auto;
+  margin-top: 16px;
 }
 .form-footer {
   gap: 24px;
@@ -542,6 +537,10 @@ img {
   top: 0;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: none;
+}
+.is-open {
+  display: block;
 }
 .modal {
   padding: 72px 16px 24px 16px;
@@ -725,12 +724,13 @@ img {
   border-radius: 4px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-none {
-  display: none;
-}
 
 /* --------------- mobail menu ------------------ */
-
+.mobail-menu .container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .mobail-menu {
   position: fixed;
   top: 0;
@@ -769,11 +769,12 @@ img {
 .nav-mobail-menu {
   padding-top: 72px;
   column-gap: 40px;
+  margin-bottom: auto;
 }
-.list-nav-mob-menu{
- display: flex;
- flex-direction: column;
- gap: 40px;
+.list-nav-mob-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 .link-nav-mob-menu {
   font-size: 36px;
@@ -782,12 +783,12 @@ img {
   letter-spacing: 0.02em;
   color: #2e2f42;
 }
-.color-nav-mob-menu{
+.color-nav-mob-menu {
   color: #404bbf;
 }
 /* address */
-.address-mob-menu {
-  padding-top: 168px;
+.address-mob-menu{
+  margin-bottom: 48px;
 }
 .a-list-mob-menu {
   display: flex;
@@ -800,21 +801,22 @@ img {
   letter-spacing: 0.02em;
   line-height: 1.2;
   color: #434455;
+  font-style: normal;
 }
-.color-a-mob-menu{
+.color-a-mob-menu {
   color: #4d5ae5;
 }
 /* icons */
 .soc-list-mob-menu {
   display: flex;
-  padding-top: 48px;
   justify-content: space-between;
+  padding-bottom: 40px;
 }
 .soc-items-mob-menu {
   width: 40px;
   height: 40px;
 }
-.icon-mob-menu{
+.icon-mob-menu {
   fill: #f4f4fd;
 }
 .soc-link-mob-menu {
@@ -827,16 +829,23 @@ img {
   border-radius: 50%;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 /*------------------ ipad ------------------*/
 
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
   }
-  /* header */
   .mobail-open-menu {
     display: none;
+  }
+  /* header */
+  .nav .list {
+    padding-left: 120px;
+  }
+  .a-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
   /* main */
   /* banner */
@@ -863,6 +872,9 @@ img {
         url(../images/people-office_ipad_2x.jpg);
     }
   }
+  .hed {
+    font-size: 56px;
+  }
   /* Advantages */
   .list-advantages {
     column-gap: 24px;
@@ -888,8 +900,8 @@ img {
     width: 356px;
   }
   /* Footer */
-  .footer .container {
-    margin-left: 108px;
+  .footer-logo {
+    padding-left: 108px;
   }
   .text-footer {
     max-width: 264px;
@@ -905,6 +917,7 @@ img {
   }
   .subscribe-footer {
     margin-top: 72px;
+    padding-left: 108px;
   }
   .subscribe-p {
     text-align: start;
@@ -917,6 +930,9 @@ img {
   }
   .subscribe-input {
     margin-bottom: 0;
+  }
+  .btn-subscribe {
+    margin-top: 0;
   }
   /* modal */
   .modal {
@@ -940,6 +956,7 @@ img {
   /* header */
   .address .a-list {
     display: flex;
+    flex-direction: row;
     gap: 40px;
   }
   .a-list .item {
@@ -1029,20 +1046,16 @@ img {
     width: calc((100% - 48px) / 3);
   }
   /* Footer */
-  .footer {
-    padding: 100px 0;
-  }
-  .footer .container {
-    margin: auto;
-  }
   .footer-logo {
-    margin-right: 120px;
+    padding-left: 0;
   }
   .subscribe-footer {
-    margin-left: 80px;
+    padding-left: 80px;
+    margin-top: 0;
   }
   .div-footer-icon {
-    margin-left: 0;
+    margin: 0;
+    padding-left: 120px;
   }
 }
 
